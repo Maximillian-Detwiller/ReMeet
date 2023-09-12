@@ -11,9 +11,8 @@ PredeterminedMeetingCode = "null";
 
 print('''BEFORE USING:
          You must first install SELENIUM.
-         Please add your webdriver(Preferably Chrome) to PATH, or else this will NOT WORK.
-         Also, Please change the "progr" in /Users/progr/AppData/Local/Google/Chrome/User Data in the code to the name of your user folder.
-         You must be the only profile in Chrome, if not, please contact me.''')
+         THIS PROJECT IS CHROME-ONLY.''')
+
 options = webdriver.ChromeOptions()
 options.add_argument(
     '--user-data-dir=/Users/progr/AppData/Local/Google/Chrome/User Data')
