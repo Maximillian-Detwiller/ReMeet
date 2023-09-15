@@ -1,25 +1,27 @@
 import time
+import sys
+import getpass
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
 
 PredeterminedMeeting = False;
 PredeterminedMeetingCode = "null";
 
 print('''BEFORE USING:
          You must first install SELENIUM.
-         Please add your webdriver(Preferably Chrome) to PATH, or else this will NOT WORK.
-         Also, Please change the "progr" in /Users/progr/AppData/Local/Google/Chrome/User Data in the code to the name of your user folder.
-         You must be the only profile in Chrome, if not, please contact me.''')
+         THIS PROJECT IS CHROME-ONLY.''')
 options = webdriver.ChromeOptions()
+userData = "/Users/" + getpass.getuser() + "/AppData/Local/Google/Chrome/User Data"
 options.add_argument(
-    '--user-data-dir=/Users/progr/AppData/Local/Google/Chrome/User Data')
+    '--user-data-dir=' + userData)
 options.add_argument(
     '--profile--directory=Default')
-
+#service = Service(executable_path=r'./chromedriver-win64/chromedriver.exe')
 
 
 
@@ -118,7 +120,7 @@ def MainLoop():
     JoinMeet(MeetingCode, FirstTime = True)
     while True:
         print("Timer starting/restarting")
-        time.sleep(2700)
+        time.sleep(10)
         MeetingCode = NewMeet(FirstTime = False)
         PasteInChat(MeetingCode)
         JoinMeet(MeetingCode, FirstTime = False)
