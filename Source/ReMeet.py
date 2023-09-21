@@ -85,14 +85,15 @@ def JoinMeet(MeetCode, FirstTime):
 def PasteInChat(MeetCode):
 
         browser.switch_to.window(browser.window_handles[1])
-        ChatButton = browser.find_element(By.XPATH, '/html/body/div[1]/c-wiz/div[1]/div/div[14]/div[3]/div[11]/div/div/div[3]/div/div[3]/div/div/span/button')
+        time.sleep(1)
+        ChatButton = browser.find_element(By.XPATH, '/html/body/div[1]/c-wiz/div[1]/div/div[15]/div[3]/div[11]/div/div/div[3]/div/div[3]/div/div/span/button')
         browser.execute_script("arguments[0].click();", ChatButton)
         time.sleep(4)
-        ChatBox = browser.find_element(By.XPATH, '/html/body/div[1]/c-wiz/div[1]/div/div[14]/div[3]/div[4]/div[2]/div/div[2]/div/div[2]/div[1]/div/label/textarea')
+        ChatBox = browser.find_element(By.ID, 'bfTqV')
         ChatBox.send_keys("--AUTOMATIC MEETING RESTART--")
         time.sleep(0.5)
 
-        SendButton = browser.find_element(By.XPATH, '/html/body/div[1]/c-wiz/div[1]/div/div[14]/div[3]/div[4]/div[2]/div/div[2]/div/div[2]/div[1]/span/button')
+        SendButton = browser.find_element(By.XPATH, '/html/body/div[1]/c-wiz/div[1]/div/div[15]/div[3]/div[4]/div[2]/div/div[2]/div/div[2]/div[1]/span/button')
         browser.execute_script("arguments[0].click();", SendButton)
         ChatBox.send_keys("--AUTOMATIC MEETING RESTART--")
         time.sleep(2)
